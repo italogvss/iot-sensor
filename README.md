@@ -1,4 +1,4 @@
-# iot-sensor
+# Toxic Gas Detection System with Telegram Bot Notifications
 This repository presents an intricate project that combines JavaScript, Arduino, and the ESP-32 board to create a toxic gas detection system. The system employs an MQ-135 sensor to detect hazardous gases and promptly notifies users via a Telegram bot. The project comprises three interconnected applications, each serving a critical purpose.
 
 # Applications
