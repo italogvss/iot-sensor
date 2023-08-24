@@ -1,10 +1,25 @@
 # iot-sensor
-Sensor para detecção de gases toxicos que notifica via Bot no Telegram caso haja muita presença de gases toxicos no ambiente
+This repository presents an intricate project that combines JavaScript, Arduino, and the ESP-32 board to create a toxic gas detection system. The system employs an MQ-135 sensor to detect hazardous gases and promptly notifies users via a Telegram bot. The project comprises three interconnected applications, each serving a critical purpose.
 
-Neste projeto há tres aplicações:
+# Applications
 
-Sensor.ino -> Script que ira rodar dentro de um ESP-32 para detectar a presença de gases toxicos utilizando um sensor MQ-135 e postando as leituras em um MQTT Broker Publico
+1. Sensor.ino
+This application is designed to run on an ESP-32 board with the MQ-135 gas sensor. It detects the presence of toxic gases and communicates the readings to a public MQTT broker.
 
-API.js -> API que ira se inscrever e ouvir os topicos do MQTT BRoker Publico em que o sensor esta postando mensagens, para processar esses dados e armazenar em um banco de dados Postgres
+3. API.js
+The API application plays a pivotal role in processing the data received from the MQTT broker. It subscribes to the relevant topics, processes the data, and stores it in a PostgreSQL database for future reference.
 
-Bot.js -> Aplicação do bot do Telegram que ira ler do banco de dados as leituras e notificar por meio de mensagens os usuarios que tiverem o bot em seus grupos, dando a informação se algum sensor parou de responder ou um aviso de presença de gases toxicos, o que indica um incendio
+3. Bot.js
+The Telegram bot application serves as a vital communication channel with the end-users. It reads the gas detection data stored in the PostgreSQL database and sends notifications to users' Telegram groups. Notifications include alerts for unresponsive sensors and warnings about toxic gas presence, indicating potential fire hazards.
+
+# how to Use
+Sensor Operation: The ESP-32 board with the MQ-135 sensor will continuously monitor gas levels and post readings to the public MQTT broker.
+
+API Listening: The API application will listen to the MQTT topics and store the received data in the PostgreSQL database.
+
+Bot Notifications: The Telegram bot will read gas detection data from the database and send timely notifications to users. These notifications include alerts about unresponsive sensors and warnings about toxic gas presence.
+
+# Conclusion
+This intricate project showcases the integration of hardware, MQTT communication, databases, and Telegram bot interactions. By combining JavaScript, Arduino, and ESP-32 capabilities, you've created a robust toxic gas detection and notification system that can potentially save lives in hazardous situations.
+
+Feel free to explore, contribute, and adapt this project for your learning and development needs!
